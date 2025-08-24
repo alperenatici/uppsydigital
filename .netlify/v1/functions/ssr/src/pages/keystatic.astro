@@ -1,0 +1,26 @@
+---
+// Keystatic admin page for static build
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keystatic Admin</title>
+</head>
+<body>
+    <div id="keystatic-app"></div>
+    <script type="module">
+        import { createRoot } from 'react-dom/client';
+        import { createElement } from 'react';
+        import { Keystatic } from '@keystatic/core/ui';
+        import config from '../../keystatic.config.js';
+
+        const container = document.getElementById('keystatic-app');
+        const root = createRoot(container);
+        
+        root.render(createElement(Keystatic, { config }));
+    </script>
+</body>
+</html>
